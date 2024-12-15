@@ -2,7 +2,7 @@ name: prebuild
 on:
   push:
     branches:
-      - main
+      - master
 permissions:
   contents: write
   deployments: write
