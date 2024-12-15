@@ -1,5 +1,20 @@
 {
+  "variables": {
+    "module_name%": "keytar",
+    "module_path%": "lib/binding"
+  },
   'targets': [
+    {
+      "target_name": "action_after_build",
+      "type": "none",
+      "dependencies": [ "<(module_name)" ],
+      "copies": [
+        {
+          "files": [ "<(PRODUCT_DIR)/<(module_name).node" ],
+          "destination": "<(module_path)"
+        }
+      ]
+    },
     {
       'target_name': 'keytar',
       'defines': [
@@ -7,7 +22,18 @@
       ],
       'cflags!': [ '-fno-exceptions' ],
       'cflags_cc!': [ '-fno-exceptions' ],
-      'xcode_settings': { 'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
+      'xcode_settings': { 
+        'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
+        'OTHER_CFLAGS': [
+          '-arch x86_64',
+          '-arch arm64'
+        ],
+        'OTHER_LDFLAGS': [
+          '-Wl, -bind_at_load',
+          '-framework CoreFoundation -framework CoreServices',
+          '-arch x86_64',
+          '-arch arm64'
+        ],
         'CLANG_CXX_LIBRARY': 'libc++',
         'MACOSX_DEPLOYMENT_TARGET': '10.7',
       },
