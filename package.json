@@ -6,25 +6,8 @@
   "typings": "keytar.d.ts",
   "name": "@seokju-na/keytar",
   "description": "Bindings to native Mac/Linux/Windows password APIs",
-  "version": "7.11.0",
+  "version": "7.12.0",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/atom/node-keytar.git"
-  },
-  "bugs": {
-    "url": "https://github.com/atom/node-keytar/issues"
-  },
-  "homepage": "http://atom.github.io/node-keytar",
-  "keywords": [
-    "keychain",
-    "password",
-    "passwords",
-    "credential",
-    "credentials",
-    "vault",
-    "credential vault"
-  ],
   "files": [
     "lib",
     "src",
@@ -49,7 +32,7 @@
   "binary": {
     "module_name": "keytar",
     "module_path": "./lib/binding",
-    "host": "https://github.com/seokju-na/keytar/releases/download/",
+    "host": "https://github.com/seokju-na/node-keytar/releases/download/",
     "remote_path": "v{version}"
   }
 }
