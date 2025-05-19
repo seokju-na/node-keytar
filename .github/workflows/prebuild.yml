@@ -22,7 +22,7 @@ jobs:
           python-version: "3.11"
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 22.x
       - uses: actions/checkout@v4
       - run: npm i
       - name: Prebuild
@@ -31,6 +31,7 @@ jobs:
           npm run prebuild -- -t 22.3.27 -r electron --arch arm64 -u ${{ github.token }}
           npm run prebuild -- -t 32.2.5 -r electron --arch arm64 -u ${{ github.token }}
           npm run prebuild -- -t 20.18.0 -r node --arch arm64 -u ${{ github.token }}
+          npm run prebuild -- -t 22.15.0 -r node --arch arm64 -u ${{ github.token }}
   macos-x64:
     name: Prebuild Binaries for macOS (x64)
     runs-on: macos-13
@@ -42,7 +43,7 @@ jobs:
           python-version: "3.11"
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 22.x
       - uses: actions/checkout@v4
       - run: npm i
       - name: Prebuild
@@ -51,6 +52,7 @@ jobs:
           npm run prebuild -- -t 22.3.27 -r electron --arch x64 -u ${{ github.token }}
           npm run prebuild -- -t 32.2.5 -r electron --arch x64 -u ${{github.token}}
           npm run prebuild -- -t 20.18.0 -r node --arch x64 -u ${{github.token}}
+          npm run prebuild -- -t 22.15.0 -r node --arch x64 -u ${{github.token}}
   windows:
     name: Prebuild Binaries for Windows
     runs-on: windows-2019
@@ -58,7 +60,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 22.x
       - uses: actions/checkout@v4
       - run: npm i
       - name: Prebuild
@@ -71,3 +73,5 @@ jobs:
           npm run prebuild -- -t 32.2.5 -r electron --arch x64 -u ${{github.token}}
           npm run prebuild -- -t 20.18.0 -r node --arch ia32 -u ${{github.token}}
           npm run prebuild -- -t 20.18.0 -r node --arch x64 -u ${{github.token}}
+          npm run prebuild -- -t 22.15.0 -r node --arch ia32 -u ${{github.token}}
+          npm run prebuild -- -t 22.15.0 -r node --arch x64 -u ${{github.token}}
