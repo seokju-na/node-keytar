@@ -1,12 +1,15 @@
 {
   "main": "./lib/keytar.js",
   "exports": {
-    ".": "./lib/keytar.js"
+    ".": {
+      "types": "./keytar.d.ts",
+      "default": "./lib/keytar.js"
+    }
   },
   "typings": "keytar.d.ts",
   "name": "@seokju-na/keytar",
   "description": "Bindings to native Mac/Linux/Windows password APIs",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "license": "MIT",
   "files": [
     "lib",
