@@ -93,6 +93,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
+      - run: sudo apt-get install libsecret-1-dev -y
       - uses: actions/checkout@v4
       - run: npm i
       - name: Prebuild
