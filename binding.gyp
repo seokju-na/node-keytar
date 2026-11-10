@@ -41,6 +41,10 @@
         'VCCLCompilerTool': {
           'ExceptionHandling': 1,
           'AdditionalOptions': [
+            # prebuild bundles node-gyp 9.x, whose gyp drops the
+            # `LanguageStandard` setting from Node >= 22 common.gypi,
+            # leaving the compiler at C++14 (node-addon-api needs C++17).
+            '/std:c++17',
             '/Qspectre',
             '/guard:cf'
           ]

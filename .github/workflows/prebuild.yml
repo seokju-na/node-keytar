@@ -86,7 +86,6 @@ jobs:
           npm run prebuild -- -t 22.20.0 -r node --arch ia32 -u ${{github.token}}
           npm run prebuild -- -t 22.20.0 -r node --arch x64 -u ${{github.token}}
           npm run prebuild -- -t 22.20.0 -r node --arch arm64 -u ${{github.token}}
-          npm run prebuild -- -t 24.22.1 -r node --arch ia32 -u ${{github.token}}
           npm run prebuild -- -t 24.22.1 -r node --arch x64 -u ${{github.token}}
           npm run prebuild -- -t 24.22.1 -r node --arch arm64 -u ${{github.token}}
   linux:
