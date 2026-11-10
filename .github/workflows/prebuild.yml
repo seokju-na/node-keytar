@@ -22,7 +22,7 @@ jobs:
           python-version: "3.11"
       - uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: 24.x
       - uses: actions/checkout@v4
       - run: npm i
       - name: Prebuild
@@ -33,6 +33,7 @@ jobs:
           npm run prebuild -- -t 20.18.0 -r node --arch arm64 -u ${{ github.token }}
           npm run prebuild -- -t 22.15.0 -r node --arch arm64 -u ${{ github.token }}
           npm run prebuild -- -t 22.20.0 -r node --arch arm64 -u ${{ github.token }}
+          npm run prebuild -- -t 24.22.1 -r node --arch arm64 -u ${{ github.token }}
   macos-x64:
     name: Prebuild Binaries for macOS (x64)
     runs-on: macos-15-intel
@@ -44,7 +45,7 @@ jobs:
           python-version: "3.11"
       - uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: 24.x
       - uses: actions/checkout@v4
       - run: npm i
       - name: Prebuild
@@ -55,6 +56,7 @@ jobs:
           npm run prebuild -- -t 20.18.0 -r node --arch x64 -u ${{github.token}}
           npm run prebuild -- -t 22.15.0 -r node --arch x64 -u ${{github.token}}
           npm run prebuild -- -t 22.20.0 -r node --arch x64 -u ${{github.token}}
+          npm run prebuild -- -t 24.22.1 -r node --arch x64 -u ${{github.token}}
   windows:
     name: Prebuild Binaries for Windows
     runs-on: windows-2022
@@ -62,7 +64,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: 24.x
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
@@ -89,6 +91,9 @@ jobs:
           npm run prebuild -- -t 22.20.0 -r node --arch ia32 -u ${{github.token}}
           npm run prebuild -- -t 22.20.0 -r node --arch x64 -u ${{github.token}}
           npm run prebuild -- -t 22.20.0 -r node --arch arm64 -u ${{github.token}}
+          npm run prebuild -- -t 24.22.1 -r node --arch ia32 -u ${{github.token}}
+          npm run prebuild -- -t 24.22.1 -r node --arch x64 -u ${{github.token}}
+          npm run prebuild -- -t 24.22.1 -r node --arch arm64 -u ${{github.token}}
   linux:
     name: Prebuild Binaries for Linux
     runs-on: ubuntu-latest
@@ -96,7 +101,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: 24.x
       - run: sudo apt-get install libsecret-1-dev -y
       - uses: actions/checkout@v4
       - run: npm i
@@ -114,3 +119,5 @@ jobs:
           npm run prebuild -- -t 22.15.0 -r node --arch arm64 -u ${{github.token}}
           npm run prebuild -- -t 22.20.0 -r node --arch x64 -u ${{github.token}}
           npm run prebuild -- -t 22.20.0 -r node --arch arm64 -u ${{github.token}}
+          npm run prebuild -- -t 24.22.1 -r node --arch x64 -u ${{github.token}}
+          npm run prebuild -- -t 24.22.1 -r node --arch arm64 -u ${{github.token}}
